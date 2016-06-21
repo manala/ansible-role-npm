@@ -20,9 +20,6 @@
       with_manala_npm_packages: "{{ manala_npm_packages }}"
       register: test_results
 
-    - debug:
-        msg: "{{ test_results.results|map(attribute='ansible_facts.test')|sort }}"
-
     # Asserts
     - assert:
         that:
